@@ -8,6 +8,6 @@ This script utilizes CreateProcessWithLogonW to seed credentials as HoneyCreds o
 
 ###ImplantCreds.ps1 Example Usage
 
-Local Host: `Implant-Cred -username Administrator -password EB8{RdPpT)!75V)g -Domain Acme`
+Local Host: `Implant-Cred -username FakeAdministrator -password EB8{RdPpT)!75V)g -Domain Acme`
 
-Remote Host: `Invoke-Command {Implant-Cred -username Administrator -password EB8{RdPpT)!75V)g -Domain Acme} -computername AcmeComputer1`
+Remote Host: `Invoke-Command {Implant-Cred -username FakeAdministrator -password EB8{RdPpT)!75V)g -Domain Acme} -computername AcmeComputer1`
