@@ -1,5 +1,5 @@
 # CanaryBadger
-Collection of useful PowerShell scripts that will create HoneyCreds, HoneyDocs, and other active defense and detection scripts
+Eventually this will be a collection of useful PowerShell scripts that will create HoneyCreds, HoneyDocs, and other active defense and detection scripts.
 
 Unlike Honey Badger, Canary Badger cares!! 
 
