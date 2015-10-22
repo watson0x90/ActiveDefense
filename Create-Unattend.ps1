@@ -2,12 +2,12 @@ function Create-Unattend {
 <#
 # All credit to the original author(s): Ryan Watson (Watson0x90)
 #
-# Implant-Cred.ps1 is free software: you can redistribute it and/or modify
+# Create-Unattend.ps1 is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
 #
-# Find-Files.ps1 is distributed in the hope that it will be useful,
+# Create-Unattend.ps1 is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
