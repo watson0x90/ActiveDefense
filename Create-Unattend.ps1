@@ -19,7 +19,8 @@ function Create-Unattend {
 This script will create a fake unattend.xml file that can be seeded onto servers and workstations. 
 The file can then be placed in typical paths where locate unattend.xml files are found. 
 The script also has the ability generate a Unicode-Base64 version of the password as well as 
-leaving the password in plaintext. Because we all know that Unicode-Base64 "encryption" is so secure!! ;) (I hope you get the sarcasm... awkward...)
+leaving the password in plaintext. Because we all know that Unicode-Base64 "encryption" is so secure!! ;) 
+(I hope you get the sarcasm... awkward...)
 
 To get the most value out of the script, monitor for failed logins for the supplied domain and local accounts.
 
