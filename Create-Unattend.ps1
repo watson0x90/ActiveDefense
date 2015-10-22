@@ -21,7 +21,9 @@ The file can then be placed in typical paths where locate unattend.xml files are
 The script also has the ability generate a Unicode-Base64 version of the password as well as 
 leaving the password in plaintext. Because we all know that Unicode-Base64 "encryption" is so secure!! ;) (I hope you get the sarcasm... awkward...)
 
-Common Unattend.xml Locations:
+To get the most value out of the script, monitor for failed logins for the supplied domain and local accounts.
+
+Common unattend.xml locations:
 C:\Windows\unattend.xml
 C:\Windows\System32\Sysprep\unattend.xml
 C:\Windows\Panther\Unattended.xml
