@@ -37,7 +37,7 @@ Optional Dependencies: None
 Version: 1.0
 
 .Description
-This script utilizes CreateProcessWithLogonW to seed credentials as HoneyCreds onto windows workstations.
+This script creates fake unattend files to place onto workstations as HoneyCreds.
 
 .EXAMPLE
 
