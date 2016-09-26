@@ -1,4 +1,4 @@
-﻿function Implant-Cred {
+function Implant-Cred {
 
 <#
 # All credit to the original author(s): Ryan Watson (Watson0x90)
@@ -36,7 +36,7 @@ This script utilizes CreateProcessWithLogonW to seed credentials as HoneyCreds o
 
 .EXAMPLE
 
-Implant-Cred -username FakeAdministrator -password EB8{RdPpT)!75V)g -Domain Acme
+Implant-Cred -username FakeAdministrator -password 'EB8{RdPpT)!75V)g' -Domain Acme
 
 Invoke-Command {Implant-Cred -username FakeAdministrator -password EB8{RdPpT)!75V)g -Domain Acme} -computername AcmeComputer1
 
@@ -111,7 +111,7 @@ public static extern bool CreateProcessWithLogonW(
     out PROCESS_INFORMATION lpProcessInformation);
 '@
 
-Add-Type -MemberDefinition $code -namespace AdvApi32 -name SRP -passThru
+Add-Type -MemberDefinition $code -namespace NativeMethods -name Win32 -passThru
 
 if(!$username){
     $username = "AD-Administrator"
@@ -125,18 +125,20 @@ if(!$domain){
     $domain = $env:USERDOMAIN
 }
 
-$pi = New-Object AdvApi32.SRP+PROCESS_INFORMATION
-$si = New-Object AdvApi32.SRP+STARTUPINFO 
+$pi = New-Object NativeMethods.Win32+PROCESS_INFORMATION
+$si = New-Object NativeMethods.Win32+STARTUPINFO 
 
-$logonFlag= 2
-$command="c:\windows\system32\cmd.exe"
-$createFlag = 0x08000000 #No window, no popup
+$logonFlag = 0x00000002
+$command = "C:\windows\system32\upnpcont.exe"
+$createFlag = 0x04000000
 $environment = $null
 $cwd = "C:\"
 
-[AdvApi32.SRP]::CreateProcessWithLogonW($username,$domain,$password,$logonFlag,$command,$command,$createFlag,$environment,$cwd,[ref] $si, [ref] $pi)
+[NativeMethods.Win32]::CreateProcessWithLogonW($username,$domain,$password,$logonFlag,$command,$null,$createFlag,$environment,$cwd,[ref]$si, [ref]$pi)
+
 
 $pkill = $pi | Select-Object -ExpandProperty dwProcessId
+Write-Verbose "[#] Started Process: $pkill" 
 Stop-Process $pkill
 
 }
